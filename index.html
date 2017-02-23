@@ -1,0 +1,742 @@
+<!--
+slidedeck: A modification of the Google IO 2012 HTML5 slide template
+URL: https://github.com/rmcgibbo/slidedeck
+
+Based on https://github.com/francescolaffi/elastic-google-io-slides, and
+ultimately:
+
+Google IO 2012 HTML5 Slide Template
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahe <lukem@google.com>
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Python for beginners</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+   <link rel="shortcut icon" href=" http://www.leeds.ac.uk/site/img/other/favicon.ico"/> 
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/custom.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides", src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+
+
+  <!-- MathJax support  -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    showProcessingMessages: false,
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    TeX: {
+      extensions: ["color.js"]
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <div style="display:hidden">
+  \[
+    \definecolor{data}{RGB}{18,110,213}
+    \definecolor{unknown}{RGB}{217,86,16}
+    \definecolor{learned}{RGB}{175,114,176}
+  \]
+  </div>
+
+</head>
+
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+
+    <h1> Python for beginners</h1>
+    <h2></h2>
+    <p> Jack Brookes<br/> PhD psychology student</p>
+  </hgroup>
+</slide>
+
+
+<slide  >
+  
+    <hgroup>
+      <h2>Contents</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Background &amp; Installation</li>
+<li>Basic Syntax</li>
+<li>Packages and Modules</li>
+<li>Resources</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>What is Python?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>General purpose <a href="https://en.wikipedia.org/wiki/High-level_programming_language">high level</a> programming language<ul class="build">
+<li>Syntax used to give instructions to a computer</li>
+<li>Platform for re-using code developed by others</li>
+</ul>
+</li>
+<li>
+<p>Designed to be very '<a href="https://en.wikipedia.org/wiki/Python_(programming_language)#Features_and_philosophy">human readable</a>'</p>
+</li>
+<li>
+<p><pre class="prettyprint" data-lang="python">
+age = int(input('Please type your age in years: '))
+if age &gt; 20 and age &lt; 35:
+    print("You are eligible for this experiment")
+else:
+    print("Sorry, you are not eligible for this experiment")
+</pre></p>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="img-top-center" >
+  
+    <hgroup>
+      <h2>Why Python?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Easy to learn</li>
+<li>'Stepping stone' into the programming universe</li>
+<li>Python is 'the second best at everything'</li>
+<li><a href="http://www.itjobswatch.co.uk/jobs/england/python.do">Increasingly high demand and high pay</a></li>
+<li>Used a lot in academia</li>
+<li>Very popular</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>What can I use Python for?</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Data processing, visualisation &amp; analysis</li>
+<li>Developing experiments (pygame, psychopy, OpenSesame, Expyrement)</li>
+<li><a href="https://automatetheboringstuff.com/">Automation</a>, e.g.<ul class="build">
+<li>Rename thousands of CSV files</li>
+<li>Grab a user's tweets for language analysis</li>
+<li>Perform automatic emotion recognition in a video</li>
+<li>Mathematically model behaviour observed in your experiment</li>
+</ul>
+</li>
+<li>Will help you understand other people's code</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>How do I use Python?</h2>
+      <h3>Installation</h3>
+    </hgroup>
+    <article ><ul class="build">
+<li>Python 2 vs Python 3</li>
+<li>Many ways to install<ul class="build">
+<li>Download from <a href="http://python.org">python.org</a></li>
+<li>Download <a href="https://www.continuum.io/downloads">Anaconda</a></li>
+<li>Download <a href="https://winpython.github.io/">WinPython</a> (my preference)</li>
+</ul>
+</li>
+<li>Choice of IDE<ul class="build">
+<li>IDLE</li>
+<li>Spyder</li>
+</ul>
+</li>
+</ul></article>
+ 
+</slide>
+
+<slide class="img-top-center" >
+  
+    <hgroup>
+      <h2>How do I use Python?</h2>
+      <h3>Writing code</h3>
+    </hgroup>
+    <article ><p><img src="figures/spyder.png"/ style="height: 480px;"></p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Word of warning</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><ul>
+<li>Programming is hard</li>
+<li>The first hours of learning are frustrating</li>
+<li>Becomes logical when you understand</li>
+<li>Be curious</li>
+<li>Following code used as examples, use as a guide</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Variables</h3>
+    </hgroup>
+    <article ><p>Assign an object to a variable name with "="</p>
+<pre class="prettyprint" data-lang="python">
+my_first_number = 23
+my_second_number = 56
+my_result = my_first_number + my_second_number
+print(my_result)
+</pre>
+
+<p class="output">79</p>
+
+<ul>
+<li>Names should be in snake_case</li>
+<li>Avoid <a href="http://pentangle.net/python/handbook/node52.html">some names</a></li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Data types</h3>
+    </hgroup>
+    <article ><p>Everything is an "object"</p>
+<pre class="prettyprint" data-lang="python">
+my_bool = True
+my_int = 32423456
+my_float = 12.765
+my_str = "hello" # <-- You can use ' or " for strings
+my_list = ['Apple', 'Orange', 'Banana']
+my_dictionary = {'Name': 'Jack', 'Age': 23}
+my_text_stimulus = psychopy.visual.TextStim(my_window, text="Hello!")
+</pre>
+
+<ul>
+<li>Data type is not strict</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Classes, functions, object</h3>
+    </hgroup>
+    <article ><p>"Classes" are custom data types that have special properties
+"Functions" are pre-written sections of code</p>
+<pre class="prettyprint" data-lang="python">
+# CLASSES usually start with capital letters
+# this is the creation of a "TextStim" object with some parameters
+my_text_stimulus = psychopy.visual.TextStim(my_window, text="Hello!")
+
+# FUNCTIONS are usually snake_case and are called with ()
+# this is using "len" function, which returns the length of the object
+my_number = len("something") # <-- my_number now equals 9
+
+# dots are used for hierarchical grouping (special, unlike R)
+my_new_object = some_module.some_object.some_function(my_parameter)
+my_new_object = some_module.SomeClass(my_parameter)
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Comments</h3>
+    </hgroup>
+    <article ><p>Help make your code easier to understand with "#"</p>
+<pre class="prettyprint" data-lang="python">
+# ask for participant's age then store in "age_input"
+age_input = input("Enter your age: ")
+# convert their input from a string into an integer
+age = int(age_input)
+# show a message on the screen
+print("You are {} years old!".format(age))
+</pre>
+
+<p class="output">
+Enter your age: 23 <br>
+You are 23 years old
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Operations</h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="python">
+my_1st_num = 8
+my_2nd_num = 7
+my_result = my_1st_num * my_2nd_num
+print(my_result)
+
+my_1st_str = "Today it is: "
+my_2nd_str = "Thursday"
+my_result = my_1st_str + my_2nd_str
+print(my_result)
+
+print( "abc" * 10 )
+</pre>
+
+<p class="output">
+56 <br>
+Today it is: Thursday <br>
+abcabcabcabcabcabcabcabcabcabc
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Operations: Psychology example</h3>
+    </hgroup>
+    <article ><p>4 trials of displaying text a stimulus, repeated x10</p>
+<pre class="prettyprint" data-lang="python">
+my_text_list = ["heads", "shoulders", "knees", "toes"]
+my_full_text_list = my_text_list * 10
+print(my_full_text_list)
+</pre>
+
+<p class="output">
+['heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes', 'heads', 'shoulders', 'knees', 'toes']
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Operations (2)</h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="python">
+my_number = 10
+print(my_number)
+my_number += 5
+print(my_number)
+my_text = "Hello"
+print(my_text)
+my_text += "!"
+print(my_text)
+</pre>
+
+<p class="output">
+10<br>
+15<br>
+Hello<br>
+Hello!
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Lists</h3>
+    </hgroup>
+    <article ><p>Store lots of objects in an order</p>
+<pre class="prettyprint" data-lang="python">
+my_fav_colour = "Blue"
+my_fav_cities = ["Leeds", "London"]
+my_fav_number = 7
+my_fav_things = [my_fav_colour, my_fav_cities, my_fav_number]
+print(my_fav_things)
+more_things = ["Python", 3.1412]
+all_things = my_fav_things + more_things
+print(all_things)
+# get a particular element with square brackets
+print(all_things[2])
+</pre>
+
+<p class="output">
+['Blue', ['Leeds', 'London'], 7] <br>
+['Blue', ['Leeds', 'London'], 7, 'Python', 3.1412] <br>
+7
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Dictionaries: Psychology example</h3>
+    </hgroup>
+    <article ><p>Store objects in arbitrary order, but associated with a "key"</p>
+<pre class="prettyprint" data-lang="python">
+# calculate reaction time & accuracy in some way
+reaction_time = 0.659 # (for example)
+accuracy = 89 # (for example)
+# store results for this trial in a dictionary
+trial_results = {"RT": reaction_time,
+                 "ACC": accuracy}
+print(trial_results)
+# access using key name in square brackets
+print(trial_results['ACC'])
+</pre>
+
+<p class="output">
+{'RT': 0.659, 'ACC': 89}<br>
+89
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>for loops</h3>
+    </hgroup>
+    <article ><p>Perform an action a set number of times</p>
+<pre class="prettyprint" data-lang="python">
+list_of_numbers = [1, 2, 3, 4]
+for n in list_of_numbers:
+    print(n*2)
+print("Finished!")
+</pre>
+
+<p class="output">
+2<br>
+4<br>
+6<br>
+8<br>
+Finished!
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>for loops: Psychology example</h3>
+    </hgroup>
+    <article ><p>For a 200 trial experiment, don't copy-paste 200 times...</p>
+<pre class="prettyprint" data-lang="python">
+number_of_trials = 200
+for trial in range(number_of_trials):
+    # (your code goes here)
+    # show stimulus
+    # wait for action
+    # record result
+    # repeat
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Boolean operations</h3>
+    </hgroup>
+    <article ><p>"==", "!=": Check for equality or inequality</p>
+<p>"&lt;", "&lt;=", "&gt;", "&gt;=": Less than, etc</p>
+<pre class="prettyprint" data-lang="python">
+# examples
+participant_answer == correct_answer
+84/12 > 10
+current_trial_num != 1 and current_trial_num < 10
+current_trial_num < 10 or current_trial_num > 50
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>if, else statements</h3>
+    </hgroup>
+    <article ><p>Perform operations based on a condition</p>
+<pre class="prettyprint" data-lang="python">
+a = 8
+b = 7
+correct_answer = a + b
+question = "What is {} + {}?".format(a,b)
+participant_answer = int(input(question))
+if participant_answer == correct_answer:
+    print("Correct!")
+else:
+    print("Incorrect")
+</pre>
+
+<p class="output">
+What is 8 + 7?: 15 <br>
+Correct!
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>if, else statements: Psychology example</h3>
+    </hgroup>
+    <article ><p>Use elif to check more than two outcomes</p>
+<pre class="prettyprint" data-lang="python">
+
+if trial_type == "Practice":
+    stim = Stimulus("These trials are just for practice")
+elif trial_type == "Pre-test":
+    stim = Stimulus("You will now begin the real task")
+elif trial_type == "Manipulation":
+    stim = Stimulus("You will now perform a different task")
+elif trial_type == "Post-test":
+    stim = Stimulus("You will now begin the final task")
+show_on_screen(stim)
+
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>while loops</h3>
+    </hgroup>
+    <article ><p>Perform an action until a condition is met</p>
+<pre class="prettyprint" data-lang="python">
+handedness = ""
+while handedness != "L" or handedness != "R":
+    handedness = input("Enter your preferred hand (L or R)")
+print("Thanks!")
+</pre>
+
+<p class="output">
+Enter your preferred hand (L or R) T<br>
+Enter your preferred hand (L or R) g<br>
+Enter your preferred hand (L or R) R<br>
+Thanks!
+</p>
+
+<p>Use "while True" to run indefinitely, until "break"</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Defining functions</h3>
+    </hgroup>
+    <article ><p>Re-use your code without duplicating</p>
+<pre class="prettyprint" data-lang="python">
+# define function "shout" that prints text with "!"
+def shout(text, loudness=1):
+    print( text + "!" * loudness )
+
+shout("Hi")
+shout("Hello", loudness=5)
+shout("Goodbye")
+</pre>
+
+<p class="output">
+Hi!<br>
+Hello!!!!!<br>
+Goodbye!
+</p>
+
+<p>Functions can return values, e.g. len(x) returns length of x</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Basic syntax</h2>
+      <h3>Defining functions: Psychology example</h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="python">
+def check_if_clicked(stimuli):
+    distance = stimuli.position - cursor.position
+    if distance < 100: # e.g. less than 100 pixels
+        clicked = True
+    else:
+        clicked = False
+    return clicked
+
+clicked_stim_1 = check_if_clicked(stimuli1)
+clicked_stim_2 = check_if_clicked(stimuli2)
+# now we know which one was clicked...
+</pre></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Packages and Modules</h2>
+      <h3>Importing modules</h3>
+    </hgroup>
+    <article ><pre class="prettyprint" data-lang="python">
+import random
+# 0-1
+print(random.random())
+# random choice (e.g. counterbalance between subjects)
+options = ["preferred", "non-preferred"]
+chosen_option = random.choice(options)
+print(chosen_option)
+# randomising a list (e.g. randomising trial order)
+colour_list = ["red","green","blue"]
+random.shuffle(colour_list)
+print(colour_list)
+</pre>
+
+<p class="output">
+0.2803702968196148<br>
+Please use your preferred hand<br>
+['blue', 'red', 'green']
+</p></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Packages and Modules</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>To install a package you will use "pip"</p>
+<ul>
+<li>If you downloaded WinPython, find your install directory and launch WinPython Command Prompt<ul>
+<li>Type "pip install packagename"</li>
+</ul>
+</li>
+<li>Anaconda- not sure</li>
+<li>Then will be available using "import packagename" in your script</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Packages and Modules</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Other useful modules</p>
+<ul>
+<li>Pandas - R-like dataframes and functions (<a href="https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf">info</a>)</li>
+<li>MatPlotLib - Plotting like MATLAB</li>
+<li>Seaborn - statistical data visualization</li>
+<li>numpy - Complex maths operations, MATLAB like</li>
+<li>SciPy - Scientific package (including stats)</li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>Resources</h2>
+      <h3></h3>
+    </hgroup>
+    <article ><p>Learn by trying it out, not reading</p>
+<ul>
+<li><a href="https://repl.it/languages/python3">repl.it - Play with code in your web browser</a></li>
+<li><a href="https://www.tutorialspoint.com/python/python_quick_guide.htm">Starter tutorial</a></li>
+<li><a href="https://www.codecademy.com/learn/python">Codecademy course</a></li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/">Python style guide</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics">Python syntax (Wiki)</a></li>
+<li><a href="https://reddit.com/r/learnpython">/r/learnpython</a></li>
+</ul></article>
+ 
+</slide>
+
+<slide  >
+  
+    <hgroup>
+      <h2>General tips</h2>
+      <h3>Problem solving</h3>
+    </hgroup>
+    <article ><ul>
+<li>Expect problems</li>
+<li>Your problem is rarely unique</li>
+<li>Google effectively<ul>
+<li>bad: "change one thing to another in a list of strings"</li>
+<li>good: "replace element in list python"</li>
+</ul>
+</li>
+<li>Hone in on the problem<ul>
+<li>See if you can replicate it in a new script</li>
+</ul>
+</li>
+</ul></article>
+ 
+</slide>
+
+
+<slide class="thank-you-slide segue nobackground">
+  <!-- <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside> -->
+  <article class="flexbox vleft auto-fadein">
+    <h2> Thank you</h2>
+    <p></p>
+  </article>
+  <p data-config-contact class="auto-fadein"> <span>email</span> <a href="mailto:ed11jb@leeds.ac.uk">ed11jb@leeds.ac.uk</a><br/> <span>github</span> <a href="http://github.com/jackbrookes">JackBrookes</a></p>
+  </p>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
